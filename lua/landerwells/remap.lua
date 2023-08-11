@@ -15,6 +15,9 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
+vim.keymap.set("n", "<leader>r", vim.cmd.reg)
+vim.keymap.set("i", "<C-BS>", "<C-w>")
+vim.keymap.set("n", "U", "C-r")
 
- -- vim.keymap.set("i", "<C-BS>", "<C-w>")
---vim.keymap.set("n", "U", "C-r")
+-- the greatest remap ever (Primeagen)
+vim.keymap.set('v', '<leader>p', '"_dP')
