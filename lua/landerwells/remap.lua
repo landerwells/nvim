@@ -26,7 +26,7 @@ vim.keymap.set("n", "_", "<C-x>")
 vim.keymap.set('n', 'x', '"_x')
 
 -- Quick way to open register menu
-vim.keymap.set('n', '<leader>r', ':reg<CR>')
+vim.keymap.set("n", "<leader>r", vim.cmd.reg)
 
 -- indent and outdent lines in visual mode
 vim.keymap.set('v', '<TAB>', '<S->>gv')
@@ -44,3 +44,6 @@ vim.keymap.set('n', '<CR>', 'o<Esc>')
 
 -- creates a new line above the cursor and goes back into normal mode
 vim.keymap.set('n', '<A-CR>', 'O<Esc>')
+
+-- Redo
+vim.keymap.set("n", "U", "C-r")
