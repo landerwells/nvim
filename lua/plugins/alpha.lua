@@ -4,7 +4,7 @@ return {
   config = function()
     local opts = { noremap = true, silent = true }
 
-    vim.keymap.set('n', '<leader>a', ':Alpha<CR>', opts)
+    vim.keymap.set('n', '<leader>al', ':Alpha<CR>', opts)
 
     local status_ok, alpha = pcall(require, 'alpha')
     if not status_ok then
