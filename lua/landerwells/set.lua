@@ -55,7 +55,7 @@ augroup netrw_mapping
 augroup END
 
 function! NetrwMapping()
-  nnoremap <buffer> <c-l> :wincmd l<cr>
+  nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<CR>
 endfunction
 
 let g:netrw_liststyle = 3
