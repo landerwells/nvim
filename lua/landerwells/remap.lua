@@ -47,3 +47,7 @@ vim.keymap.set('n', '<A-CR>', 'O<Esc>')
 
 -- Redo
 vim.keymap.set("n", "U", "C-r")
+
+vim.keymap.set("i", "C-BS", "C-w")
+
+vim.keymap.set("n", "U", "C-r")
