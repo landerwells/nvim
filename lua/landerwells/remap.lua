@@ -10,12 +10,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Window switching
--- vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
--- vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
--- vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
--- vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
-
 -- Better incrementing/decrementing
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "_", "<C-x>")
@@ -48,6 +42,9 @@ vim.keymap.set('n', '<A-CR>', 'O<Esc>')
 -- Redo
 vim.keymap.set("n", "U", "C-r")
 
-vim.keymap.set("i", "C-BS", "C-w")
+vim.keymap.set("i", "<C-BS>", "<C-w>")
 
-vim.keymap.set("n", "U", "C-r")
+vim.keymap.set("n", "U", "<C-r>")
+
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
