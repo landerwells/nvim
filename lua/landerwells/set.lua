@@ -48,6 +48,8 @@ vim.opt.cursorline = true
 vim.opt.winblend = 0
 vim.opt.colorcolumn = "81"
 
+vim.o.pumheight = 15
+
 vim.cmd([[ 
 augroup netrw_mapping
   autocmd!
