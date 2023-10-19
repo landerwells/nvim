@@ -49,7 +49,7 @@ return {
 
       lsp.ensure_installed({
         'lua_ls',
-        'clangd'
+        'clangd',
       })
 
       lsp.setup()
