@@ -19,12 +19,19 @@ return {
     branch = 'v2.x',
     dependencies = {
       { 'neovim/nvim-lspconfig' },
+
       {
         'williamboman/mason.nvim',
+        opts = {
+          ensure_installed = {
+            "rust-analyzer",
+          },
+        },
         build = function()
           pcall(vim.cmd, 'MasonUpdate')
         end
       },
+
       { 'williamboman/mason-lspconfig.nvim', },
 
       { 'hrsh7th/nvim-cmp' },
