@@ -1,11 +1,3 @@
-return {
-  'lukas-reineke/indent-blankline.nvim',
-  event = { 'BufReadPre', 'BufNewFile' },
-  config = function()
-    -- never enable this god forsaken option again...
-    -- vim.opt.list = true
-    vim.cmd([[highlight IndentBlanklineIndent1 guifg=#515151 gui=nocombine]])
-
-    require('indent_blankline').setup({})
-  end
+return{
+  "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {}
 }

@@ -50,3 +50,5 @@ vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>v", vim.cmd.vs)
+
+vim.keymap.set('n', '<C-e>', '<nop>')
