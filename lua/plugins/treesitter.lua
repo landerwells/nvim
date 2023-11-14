@@ -13,7 +13,12 @@ return {
       treesitter.setup({
         ensure_installed = { "cpp", "java", "ruby", "lua", "markdown_inline", "c", "vim" },
         sync_install = false,
-        auto_install = false,
+        auto_install = true,
+
+        ignore_install = {},
+
+        modules = {},
+
         highlight = {
           enable = true,
           additional_vim_regex_highlighting = false,
@@ -22,9 +27,9 @@ return {
           enable = true,
           autocmd = false
         },
---        autopairs = {
---          enable = true
---        },
+        --        autopairs = {
+        --          enable = true
+        --        },
         autotag = {
           enable = true
         },

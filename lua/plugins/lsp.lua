@@ -27,18 +27,17 @@ return {
             "rust-analyzer",
           },
         },
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end
       },
 
       { 'williamboman/mason-lspconfig.nvim', },
 
       { 'hrsh7th/nvim-cmp' },
       { 'hrsh7th/cmp-nvim-lsp' },
+      { 'onsails/lspkind.nvim' },
       { 'L3MON4D3/LuaSnip' },
       { 'SmiteshP/nvim-navic' }
     },
+
     config = function()
 
       local lsp = require('lsp-zero').preset({})
@@ -64,7 +63,57 @@ return {
       local cmp = require('cmp')
       -- local cmp_action = require('lsp-zero').cmp_action()
 
+      require('lspkind').init({
+        -- DEPRECATED (use mode instead): enables text annotations
+        --
+        -- default: true
+        -- with_text = true,
+
+        -- defines how annotations are shown
+        -- default: symbol
+        -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+        mode = 'symbol_text',
+
+        -- default symbol map
+        -- can be either 'default' (requires nerd-fonts font) or
+        -- 'codicons' for codicon preset (requires vscode-codicons font)
+        --
+        -- default: 'default'
+        preset = 'codicons',
+
+        -- override preset symbols
+        --
+        -- default: {}
+        symbol_map = {
+          Text = "󰉿",
+          Method = "󰆧",
+          Function = "󰊕",
+          Constructor = "",
+          Field = "󰜢",
+          Variable = "󰀫",
+          Class = "󰠱",
+          Interface = "",
+          Module = "",
+          Property = "󰜢",
+          Unit = "󰑭",
+          Value = "󰎠",
+          Enum = "",
+          Keyword = "󰌋",
+          Snippet = "",
+          Color = "󰏘",
+          File = "󰈙",
+          Reference = "󰈇",
+          Folder = "󰉋",
+          EnumMember = "",
+          Constant = "󰏿",
+          Struct = "󰙅",
+          Event = "",
+          Operator = "󰆕",
+          TypeParameter = "",
+        },
+      })
       require('luasnip.loaders.from_vscode').lazy_load()
+      local lspkind = require 'lspkind'
 
       cmp.setup({
         preselect = cmp.PreselectMode.None,
@@ -83,6 +132,9 @@ return {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
           end
+        },
+        formatting = {
+          format = lspkind.cmp_format({with_text = true, maxwidth = 50})
         }
       })
 
