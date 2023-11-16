@@ -1,6 +1,7 @@
 -- Themery block
 -- This block will be replaced by Themery.
 vim.cmd("colorscheme oxocarbon")
+vim.cmd("highlight GitSignsAdd guifg=#58d354")
 -- end themery block
 
 -- alternate method for transparency
