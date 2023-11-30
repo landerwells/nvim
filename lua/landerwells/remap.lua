@@ -2,8 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+7<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<4<CR>gv=gv")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -11,9 +11,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "<C-a>", "ggVG")
 -- Better incrementing/decrementing
-vim.keymap.set("n", "+", "<C-a>")
-vim.keymap.set("n", "_", "<C-x>")
+-- Never really used
+-- vim.keymap.set("n", "+", "<C-a>")
+-- vim.keymap.set("n", "_", "<C-x>")
 
 -- prevent x from copying over Vim clipboard
 -- test to see if I wanna keep it
