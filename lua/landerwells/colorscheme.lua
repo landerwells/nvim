@@ -1,5 +1,9 @@
 -- Themery block
 -- This block will be replaced by Themery.
+require("boo-colorscheme").use({
+  italic = true, -- toggle italics
+  theme = "boo"
+})
 vim.cmd("colorscheme oxocarbon")
 vim.cmd("highlight GitSignsAdd guifg=#58d354")
 vim.cmd("highlight GitSignsChange guifg=#ffae44")
