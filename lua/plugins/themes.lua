@@ -1,4 +1,5 @@
 return {
   {"nyoom-engineering/oxocarbon.nvim"},
-  {'luisiacc/gruvbox-baby'}
+  {'luisiacc/gruvbox-baby'},
+  {"rockerBOO/boo-colorscheme-nvim"}
 }
