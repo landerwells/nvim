@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<C-b>", vim.cmd.Ex)
+vim.keymap.set("n", "<C-b>", ':Neotree toggle<CR>')
 
 vim.keymap.set("v", "J", ":m '>+7<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<4<CR>gv=gv")
@@ -54,3 +54,7 @@ vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>v", vim.cmd.vs)
 
 vim.keymap.set('n', '<C-e>', '<nop>')
+
+vim.keymap.set('n', '<leader>ce', ':Copilot enable<CR>')
+vim.keymap.set('n', '<leader>cd', ':Copilot disable<CR>')
+
