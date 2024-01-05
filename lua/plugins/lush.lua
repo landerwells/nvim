@@ -1,5 +1,5 @@
 return {
   'rktjmp/lush.nvim',
-  {dir = '~/Developer/purple'}
+  {dir = '~/.config/nvim/purple'},
 }
 
