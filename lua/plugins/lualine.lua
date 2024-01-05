@@ -96,21 +96,6 @@ local function markM()
 	return " " .. markBufname .. ":" .. markLn
 end
 
--- only show the clock when fullscreen (= it covers the menubar clock)
-local function clock()
-	if vim.opt.columns:get() < 110 or vim.opt.lines:get() < 25 then return "" end
-
-	local time = tostring(os.date()):sub(12, 16)
-	if os.time() % 2 == 1 then time = time:gsub(":", " ") end -- make the `:` blink
-	return time
-end
-
--- wrapper to not require navic directly
-local function navicBreadcrumbs()
-	if bo.filetype == "css" or not require("nvim-navic").is_available() then return "" end
-	return require("nvim-navic").get_location()
-end
-
 --------------------------------------------------------------------------------
 
 ---improves upon the default statusline components by having properly working icons
@@ -160,38 +145,10 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- nerdfont: powerline icons have the prefix 'ple-'
 local bottomSeparators = { left = "", right = "" }
-local topSeparators = { left = "", right = "" }
-local emptySeparators = { left = "", right = "" }
+-- local topSeparators = { left = "", right = "" }
+-- local emptySeparators = { left = "", right = "" }
 
 local lualineConfig = {
-	-- INFO using the tabline will override vim's default tabline, so the tabline
-	-- should always include the tab element
-	-- tabline = {
-	-- 	lualine_a = {
-	-- 		-- INFO setting different section separators in the same components has
-	-- 		-- yanky results, they should have the same separator
-	-- 		-- searchcounter at the top, so it work with cmdheight=0
-	-- 		{ clock, section_separators = emptySeparators },
-	-- 		{
-	-- 			"tabs",
-	-- 			mode = 1,
-	-- 			max_length = vim.o.columns * 0.7,
-	-- 			section_separators = emptySeparators,
-	-- 			cond = function() return fn.tabpagenr("$") > 1 end,
-	-- 		},
-	-- 	},
-	-- 	lualine_b = {
-	-- 		{ navicBreadcrumbs, section_separators = topSeparators },
-	-- 	},
-	-- 	lualine_c = {},
-	-- 	lualine_x = {},
-	-- 	-- INFO dap and recording status defined in the respective plugin configs
-	-- 	-- for lualine_y and lualine_z for their lazy loading
-	-- 	lualine_y = {
-	-- 		{ markM },
-	-- 	},
-	-- 	lualine_z = {},
-	-- },
 	sections = {
 		lualine_a = {
 			{ "branch", cond = isStandardBranch },

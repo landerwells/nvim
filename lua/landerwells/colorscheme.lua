@@ -1,10 +1,6 @@
 -- Themery block
 -- This block will be replaced by Themery.
-require("boo-colorscheme").use({
-  italic = true, -- toggle italics
-  theme = "boo"
-})
-vim.cmd("colorscheme oxocarbon")
+vim.cmd("colorscheme purple")
 vim.cmd("highlight RainbowDelimiterRed guifg=#ffd700")
 vim.cmd("highlight RainbowDelimiterYellow guifg=#da70d6")
 vim.cmd("highlight RainbowDelimiterBlue guifg=#179fff")
