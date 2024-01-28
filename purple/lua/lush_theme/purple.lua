@@ -96,7 +96,7 @@ local theme = lush(function(injected_functions)
     -- MsgSeparator   { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     -- MoreMsg        { }, -- |more-prompt|
     NonText        { fg = hsl("#404040")}, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-    -- Normal         { }, -- Normal text
+    Normal         { }, -- Normal text
     NormalFloat    { }, -- Normal text in floating windows.
     FloatBorder    { fg = hsl("#525252")}, -- Border of floating windows.
     -- FloatTitle     { }, -- Title of floating windows.
@@ -123,7 +123,7 @@ local theme = lush(function(injected_functions)
     -- TabLineFill    { }, -- Tab pages line, where there are no labels
     -- TabLineSel     { }, -- Tab pages line, active tab page label
     Title          { fg = hsl("#ba5aff") }, -- Titles for output from ":set all", ":autocmd" etc.
-    Visual         { bg = hsl("#232323")}, -- Visual mode selection
+    Visual         { bg = hsl("#343434")}, -- Visual mode selection
     -- VisualNOS      { }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg     { fg = hsl("#d35454") }, -- Warning messages
     -- Whitespace     { }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
@@ -261,7 +261,7 @@ local theme = lush(function(injected_functions)
     -- sym"@character.special" { }, -- SpecialChar
     -- sym"@number"            { }, -- Number
     -- sym"@boolean"           { }, -- Boolean
-    -- sym"@float"             { }, -- Float
+    sym"@float"             { }, -- Float
     -- sym"@function"          { }, -- Function
     -- sym"@function.builtin"  { }, -- Special
     -- sym"@function.macro"    { }, -- Macro

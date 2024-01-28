@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 
 vim.keymap.set("n", "<C-b>", ':Neotree toggle<CR>')
 
+vim.keymap.set("i", "<BS>", '<C-w>')
+
 vim.keymap.set("v", "J", ":m '>+7<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<4<CR>gv=gv")
 
@@ -13,14 +15,8 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "gd", "gdzz")
 
 vim.keymap.set("n", "<C-a>", "ggVG")
--- Better incrementing/decrementing
--- Never really used
--- vim.keymap.set("n", "+", "<C-a>")
--- vim.keymap.set("n", "_", "<C-x>")
 
 -- prevent x from copying over Vim clipboard
--- test to see if I wanna keep it
--- this is the black hole register
 vim.keymap.set('n', 'x', '"_x')
 
 -- Quick way to open register menu
@@ -43,16 +39,12 @@ vim.keymap.set('n', '<CR>', 'o<Esc>')
 -- creates a new line above the cursor and goes back into normal mode
 vim.keymap.set('n', '<A-CR>', 'O<Esc>')
 
--- Redo
-vim.keymap.set("n", "U", "C-r")
-
 vim.keymap.set("i", "<C-BS>", "<C-w>")
-
-vim.keymap.set("n", "U", "<C-r>")
 
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>v", vim.cmd.vs)
+vim.keymap.set("n", "<leader>h", vim.cmd.split)
 
 vim.keymap.set('n', '<C-e>', '<nop>')
 
