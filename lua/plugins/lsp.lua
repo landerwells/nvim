@@ -1,163 +1,39 @@
 return {
   {
-    'folke/neodev.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
+    "williamboman/mason.nvim",
+    lazy = false,
     config = function()
-      local neodev_status_ok, neodev = pcall(require, 'neodev')
-
-      if not neodev_status_ok then
-        return
-      end
-
-      neodev.setup()
-    end
+      require("mason").setup()
+    end,
   },
   {
-    'VonHeikemen/lsp-zero.nvim',
-    event = { 'BufReadPre', 'BufNewFile' },
-    cmd = 'Mason',
-    branch = 'v2.x',
-    dependencies = {
-      { 'neovim/nvim-lspconfig' },
-
-      {
-        'williamboman/mason.nvim',
-        opts = {
-          ensure_installed = {
-            "rust-analyzer",
-          },
-        },
-      },
-
-      { 'williamboman/mason-lspconfig.nvim', },
-
-      { 'hrsh7th/nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lsp' },
-      { 'onsails/lspkind.nvim' },
-      { 'L3MON4D3/LuaSnip' },
-      { 'SmiteshP/nvim-navic' }
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
+    opts = {
+      auto_install = true,
     },
-
-    config = function()
-
-      local lsp = require('lsp-zero').preset({})
-
-      local navic = require('nvim-navic')
-
-      lsp.on_attach(function(client, bufnr)
-        lsp.default_keymaps({buffer = bufnr})
-        if client.server_capabilities.documentSymbolProvider then
-          navic.attach(client, bufnr)
-        end
-      end)
-
-      require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
-      local cmp_nvim_lsp = require "cmp_nvim_lsp"
-
-      require("lspconfig").clangd.setup {
-        on_attach = on_attach,
-        capabilities = cmp_nvim_lsp.default_capabilities(),
-        cmd = {
-          "clangd",
-          "--offset-encoding=utf-16",
-        },
-      }
-      lsp.ensure_installed({
-        'lua_ls',
-        'clangd',
-      })
-
-      lsp.setup()
-
-      local cmp = require('cmp')
-      -- local cmp_action = require('lsp-zero').cmp_action()
-
-      require('lspkind').init({
-        -- DEPRECATED (use mode instead): enables text annotations
-        --
-        -- default: true
-        -- with_text = true,
-
-        -- defines how annotations are shown
-        -- default: symbol
-        -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-        mode = 'symbol_text',
-
-        -- default symbol map
-        -- can be either 'default' (requires nerd-fonts font) or
-        -- 'codicons' for codicon preset (requires vscode-codicons font)
-        --
-        -- default: 'default'
-        preset = 'codicons',
-
-        -- override preset symbols
-        --
-        -- default: {}
-        symbol_map = {
-          Text = "󰉿",
-          Method = "󰆧",
-          Function = "󰊕",
-          Constructor = "",
-          Field = "󰜢",
-          Variable = "󰀫",
-          Class = "󰠱",
-          Interface = "",
-          Module = "",
-          Property = "󰜢",
-          Unit = "󰑭",
-          Value = "󰎠",
-          Enum = "",
-          Keyword = "󰌋",
-          Snippet = "",
-          Color = "󰏘",
-          File = "󰈙",
-          Reference = "󰈇",
-          Folder = "󰉋",
-          EnumMember = "",
-          Constant = "󰏿",
-          Struct = "󰙅",
-          Event = "",
-          Operator = "󰆕",
-          TypeParameter = "",
-        },
-      })
-      require('luasnip.loaders.from_vscode').lazy_load()
-      local lspkind = require 'lspkind'
-
-      cmp.setup({
-        preselect = cmp.PreselectMode.None,
-        sources = {
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-        },
-        mapping = {
-          ['<CR>'] = cmp.mapping.confirm({ select = false }),
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
-        },
-        snippet = {
-          expand = function(args)
-            require('luasnip').lsp_expand(args.body)
-          end
-        },
-        formatting = {
-          format = lspkind.cmp_format({with_text = true, maxwidth = 50})
-        }
-      })
-
-    end
   },
-  { 'saadparwaiz1/cmp_luasnip' },
-  { 'rafamadriz/friendly-snippets' },
-  -- {
-  --     'dgagn/diagflow.nvim',
-  --     opts = {
-  --         -- placement = 'inline',
-  --         scope = 'line',
-  --         padding_right = 5
-  --     }
-  -- }
+  {
+    "neovim/nvim-lspconfig",
+    lazy = false,
+    config = function()
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+      local lspconfig = require("lspconfig")
+      lspconfig.tsserver.setup({
+        capabilities = capabilities
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities
+      })
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
