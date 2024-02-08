@@ -4,8 +4,8 @@ vim.keymap.set("n", "<C-b>", ':Neotree toggle<CR>')
 
 vim.keymap.set("i", "<BS>", '<C-w>')
 
-vim.keymap.set("v", "J", ":m '>+7<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<4<CR>gv=gv")
+-- vim.keymap.set("v", "J", ":m '>+7<CR>gv=gv")
+-- vim.keymap.set("v", "K", ":m '<4<CR>gv=gv")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -30,7 +30,7 @@ vim.keymap.set('v', '<S-TAB>', '<S-<>gv')
 vim.keymap.set('v', '<leader>p', '"_dP')
 
 -- keep cursor at front when appending lines below
-vim.keymap.set('n', 'J', 'mzJ`z')
+-- vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', 'x', '"_x')
 
 -- creates a new line below the cursor and goes back into normal mode
