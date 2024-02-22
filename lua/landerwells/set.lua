@@ -33,12 +33,12 @@ vim.opt.sidescrolloff = 8
 vim.opt.isfname:append("@-@")
 vim.opt.termguicolors = true
 vim.opt.updatetime = 50
-vim.cmd [[ highlight clear ]]
 vim.opt.background = "dark" -- set this to dark or light
 vim.opt.backspace = "indent,eol,start"
 vim.opt.cursorline = true
 vim.opt.winblend = 0
 vim.o.pumheight = 15
+vim.cmd [[ highlight clear ]]
 
 -- vim.cmd([[ 
 -- augroup netrw_mapping
