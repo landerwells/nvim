@@ -48,17 +48,19 @@ vim.keymap.set("n", "<leader>h", vim.cmd.split)
 
 vim.keymap.set('n', '<C-e>', '<nop>')
 
--- Copilot
-vim.keymap.set('n', '<leader>c', function()
-    -- Check if Copilot is enabled
-    local copilot_enabled = vim.g.copilot_enabled
-    if copilot_enabled then
-        -- If enabled, disable it
-        vim.cmd(":Copilot disable")
+vim.keymap.set('n', '<Leader>c', '<cmd>lua ToggleCopilot()<CR>', { noremap = true, silent = true })
+
+-- Function to toggle Copilot
+function ToggleCopilot()
+    if vim.g.copilot_enabled == 0 then
+        vim.cmd(":Copilot enable")
+        vim.g.copilot_enabled = 1
+        print("Copilot enabled")
     else
-        -- If disabled, enable it
-        vim.cmd("Copilot enable")
+        vim.cmd(":Copilot disable")
+        vim.g.copilot_enabled = 0
+        print("Copilot disabled")
     end
-    -- Toggle the state variable
-    vim.g.copilot_enabled = not copilot_enabled
-end)
+end
+
+

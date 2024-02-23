@@ -78,7 +78,7 @@ local theme = lush(function(injected_functions)
     -- TermCursor     { }, -- Cursor in a focused terminal
     -- TermCursorNC   { }, -- Cursor in an unfocused terminal
     -- ErrorMsg       { }, -- Error messages on the command line
-    VertSplit      { fg = hsl("#525252") }, -- Column separating vertically split windows
+    VertSplit      { fg = hsl("#323232") }, -- Column separating vertically split windows
     -- Folded         { }, -- Line used for closed folds
     -- FoldColumn     { }, -- 'foldcolumn'
     SignColumn     { }, -- Column where |signs| are displayed

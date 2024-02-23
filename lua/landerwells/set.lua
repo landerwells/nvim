@@ -39,25 +39,12 @@ vim.opt.cursorline = true
 vim.opt.winblend = 0
 vim.o.pumheight = 15
 vim.cmd [[ highlight clear ]]
-
--- vim.cmd([[ 
--- augroup netrw_mapping
---   autocmd!
---   autocmd filetype netrw call NetrwMapping()
--- augroup END
---
--- function! NetrwMapping()
---   nnoremap <silent> <buffer> <c-l> :TmuxNavigateRight<CR>
--- endfunction
---
--- let g:netrw_liststyle = 3
--- let g:netrw_banner = 0
--- let g:netrw_home=$XDG_CACHE_HOME.'/vim'
--- ]])
---
+vim.g.copilot_enabled = 0
 
 vim.on_key(function(char)
 if vim.fn.mode() == "n" then
 vim.opt.hlsearch = vim.tbl_contains({ "<CR>", "n", "N", "*", "#", "?", "/" }, vim.fn.keytrans(char))
 end
 end, vim.api.nvim_create_namespace "auto_hlsearch")
+
+
