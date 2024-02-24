@@ -11,7 +11,7 @@ return {
       end
 
       treesitter.setup({
-        ensure_installed = { "vimdoc", "query", "cpp", "java", "ruby", "lua", "markdown_inline", "c", "vim", "rust" },
+        ensure_installed = { "vimdoc", "query", "cpp", "java", "ruby", "lua", "markdown_inline", "c", "vim", "rust", "haskell"},
         sync_install = false,
         auto_install = true,
 
