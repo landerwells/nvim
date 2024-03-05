@@ -140,7 +140,7 @@ local theme = lush(function(injected_functions)
     --
     -- Uncomment and edit if you want more specific syntax highlighting.
 
-    Comment        { fg = hsl("#525252"), gui="italic"}, -- Any comment
+    Comment        { fg = hsl("#525252"), gui="italic" }, -- Any comment
 
     Constant       { fg = hsl("#ffffff") }, -- (*) Any constant
     String         { fg = hsl("#ba5aff")}, --   A string constant: "this is a string"

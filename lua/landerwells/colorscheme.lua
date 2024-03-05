@@ -1,6 +1,7 @@
 -- Themery block
 -- This block will be replaced by Themery.
 vim.cmd("colorscheme purple")
+vim.cmd('highlight Comment cterm=italic gui=italic')
 vim.cmd("highlight RainbowDelimiterRed guifg=#ffd700")
 vim.cmd("highlight RainbowDelimiterYellow guifg=#da70d6")
 vim.cmd("highlight RainbowDelimiterBlue guifg=#179fff")
