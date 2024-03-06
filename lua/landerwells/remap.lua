@@ -44,7 +44,7 @@ vim.keymap.set("i", "<C-BS>", "<C-w>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 vim.keymap.set("n", "<leader>q", ":q<CR>")
 vim.keymap.set("n", "<leader>v", vim.cmd.vs)
-vim.keymap.set("n", "<leader>h", vim.cmd.split)
+vim.keymap.set("n", "<leader>hs", vim.cmd.split)
 
 vim.keymap.set('n', '<C-e>', '<nop>')
 
@@ -62,5 +62,3 @@ function ToggleCopilot()
         print("Copilot disabled")
     end
 end
-
-
