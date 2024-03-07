@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<C-b>", ':Neotree toggle<CR>')
+vim.keymap.set("n", "<C-b>", ':Oil<CR>')
 
 vim.keymap.set("i", "<BS>", '<C-w>')
 

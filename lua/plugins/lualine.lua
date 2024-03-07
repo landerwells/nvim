@@ -38,7 +38,7 @@ local bubbles_theme = {
 require('lualine').setup {
   options = {
     theme = "auto",
-    disabled_filetypes = { "neo-tree", "" },
+    disabled_filetypes = { "oil", "" },
     component_separators = '',
     section_separators = { left = '', right = '' },
   },
