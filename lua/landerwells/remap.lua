@@ -1,6 +1,8 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<C-b>", ':Oil<CR>')
+vim.keymap.set("n", "<C-b>", function()
+  require("oil").toggle_float()
+end)
 
 vim.keymap.set("i", "<BS>", '<C-w>')
 
