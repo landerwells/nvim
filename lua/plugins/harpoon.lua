@@ -1,6 +1,6 @@
 return {
   'ThePrimeagen/harpoon',
-  branch = "harpoon",
+  branch = "harpoon2",
   event = 'VimEnter',
   config = function ()
 
