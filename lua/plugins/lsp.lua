@@ -27,7 +27,12 @@ return {
         capabilities = capabilities
       })
       lspconfig.clangd.setup {
-        capabilities = capabilities
+        -- on_attach = on_attach,
+        capabilities = capabilities,
+        cmd = {
+          "clangd",
+          "--offset-encoding=utf-16",
+        },
       }
       lspconfig.lua_ls.setup {
         on_init = function(client)
