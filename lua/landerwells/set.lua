@@ -37,7 +37,12 @@ vim.opt.background = "dark" -- set this to dark or light
 vim.opt.backspace = "indent,eol,start"
 vim.opt.cursorline = true
 vim.opt.winblend = 0
-vim.o.pumheight = 15
+vim.o.pumheight = 10
+vim.opt.pumblend = 10
+vim.opt.showmode = false
+vim.opt.numberwidth = 4
+
+
 vim.cmd [[ highlight clear ]]
 vim.g.copilot_enabled = 0
 
